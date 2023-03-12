@@ -118,15 +118,15 @@
 }
 
 .map-key .key-vaccination {
-	background: url('images/main-sprite.png') no-repeat 0px -397px;
+	background: url('../images/main-sprite.png') no-repeat 0px -397px;
 }
 
 .map-key .key-education {
-	background: url('images/main-sprite.png') no-repeat -582px -397px;
+	background: url('../images/main-sprite.png') no-repeat -582px -397px;
 }
 
 .map-key .key-no-requirements {
-	background: url('images/main-sprite.png') no-repeat -582px -301px;
+	background: url('../images/main-sprite.png') no-repeat -582px -301px;
 }
 
 .map-key hr {

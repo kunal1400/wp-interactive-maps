@@ -139,46 +139,46 @@ var USMap = (function(){
 					posx = posx - ( popoverWidth / 2 );
 					
 					console.log(posx, "Breakpoint")
-					if(posx > 30 && posx < 50) {
-						posx = posx - 20;
-						posy = posy + 20;
-					}
-					if(posx > 50 && posx < 100) {
-						posx = posx - 25;
-						posy = posy + 25;
-					}
-					if(posx > 100 && posx < 200) {
-						posx = posx - 25;
-						posy = posy + 25;
-					}
-					if(posx > 200 && posx < 300) {
-						posx = posx - 50;
-						posy = posy + 50;
-					}
-					if(posx > 300 && posx < 350) {
-						posx = posx - 65;
-						posy = posy + 65;
-					}
-					if(posx > 350 && posx < 400) {
-						posx = posx - 65;
-						posy = posy + 65;
-					}
-					if(posx > 400 && posx < 500) {
-						posx = posx - 80;
-						posy = posy + 80;
-					}
-					if(posx > 500 && posx < 550) {
-						posx = posx - 90;
-						posy = posy + 110;
-					}
-					if(posx > 550 && posx < 600) {
-						posx = posx - 90;
-						posy = posy + 95;
-					}
-					if(posx > 600 && posx < 700) {
-						posx = posx - 95;
-						posy = posy + 100;
-					}
+					// if(posx > 30 && posx < 50) {
+					// 	posx = posx - 20;
+					// 	posy = posy + 20;
+					// }
+					// if(posx > 50 && posx < 100) {
+					// 	posx = posx - 25;
+					// 	posy = posy + 25;
+					// }
+					// if(posx > 100 && posx < 200) {
+					// 	posx = posx - 25;
+					// 	posy = posy + 25;
+					// }
+					// if(posx > 200 && posx < 300) {
+					// 	posx = posx - 50;
+					// 	posy = posy + 50;
+					// }
+					// if(posx > 300 && posx < 350) {
+					// 	posx = posx - 65;
+					// 	posy = posy + 65;
+					// }
+					// if(posx > 350 && posx < 400) {
+					// 	posx = posx - 65;
+					// 	posy = posy + 65;
+					// }
+					// if(posx > 400 && posx < 500) {
+					// 	posx = posx - 80;
+					// 	posy = posy + 80;
+					// }
+					// if(posx > 500 && posx < 550) {
+					// 	posx = posx - 90;
+					// 	posy = posy + 110;
+					// }
+					// if(posx > 550 && posx < 600) {
+					// 	posx = posx - 90;
+					// 	posy = posy + 95;
+					// }
+					// if(posx > 600 && posx < 700) {
+					// 	posx = posx - 95;
+					// 	posy = posy + 100;
+					// }
 
 					posy = ( shapeBBox.y + ( (shapeBBox.y2 - shapeBBox.y) / 2 ) ) * mapScaleY;
 
@@ -186,7 +186,6 @@ var USMap = (function(){
 						posy = posy - ( popoverHeight + 26 );	// when using shape
 					} else {
 						posy = posy - ( popoverHeight + 36 );	// When using labelHitArea
-
 					}
 
 					// This is needed in order for the popover to properly re-draw;

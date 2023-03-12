@@ -71,7 +71,7 @@ function get_state_map( $atts ){
             </div>
         <div class="hide-for-small">
 			<div class="map-right large-12 columns">
-            	<div id="map" style="width: 100%; height: 468px;"></div>
+            	<div id="map" style="width: 720px; height: 465px;"></div>
                 <p>Please visit the <a href="http://www.ncsl.org/issues-research/health/meningitis-state-legislation-and-laws.aspx" target="_blank">National Conference of State Legislatures</a> for links to specific state laws.</p>
             </div>
             <div class="clearfix"></div>
