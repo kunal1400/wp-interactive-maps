@@ -1,0 +1,194 @@
+/*MAP*/
+
+/* U.S. Map */
+
+.map-object{
+	position: relative;
+}
+
+.map-object .popover{
+	position: absolute;
+	z-index: 10;
+	background: #666666;
+	border: 4px solid #ffffff;
+	max-width: 220px;
+	min-width: 220px;
+	font-family: 'HelveticaNeue-Regular', arial, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	-moz-box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+	box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+	-webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.3));
+	-webkit-box-shadow: none;
+	filter: drop-shadow(0 1px 4px rgba(0,0,0,0.3));
+}
+
+.map-object .popover:after, 
+.map-object .popover:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.map-object .popover:after {
+	border-color: rgba(102, 102, 102, 0);
+	border-top-color: #FFF;
+	border-width: 20px;
+	left: 50%;
+	margin-left: -20px;
+	margin-top: -1px;
+}
+.map-object .popover:before {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #ffffff;
+	border-width: 26px;
+	left: 50%;
+	margin-left: -26px;
+}
+
+.map-object .popover .inner{
+	position: relative;
+	z-index: 1;
+	background: #FFF;
+	padding: 10px 0px;
+}
+
+.map-object .popover b{
+	font-style: normal;
+	font-weight: bold;
+}
+
+.map-object .popover p{
+	font-size: 12px;
+	padding: 0px 10px;
+	margin: 0;
+	line-height: 16px;
+	/*background: #666;*/
+}
+
+.map-object .popover ul{
+	text-align: right;
+	list-style: none;
+	margin: 0px 10px 0px 10px;
+	/*background: #666;*/
+}
+
+.map-object .popover li{
+	margin: 0;
+	font-size: 11px;
+}
+
+.map-object .popover ul li:first-child{
+	margin-top:5px;
+}
+
+.map-object .popover li a{
+	color: #ffcb75;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.map-left {
+	padding-left: 0px;
+	float: none;
+	padding-right: 0;
+}
+.map-right {
+	padding-right: 0px;	
+}
+
+.map-key {
+	border: 2px solid #e5e5e5;
+	width:100%;
+	max-width: 600px;
+	padding: 5%;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.map-key p {
+	padding-left: 30px;
+	color: #1f509c;
+	margin-bottom: 0px;
+	font-size: 13px;
+}
+
+.map-key .key-vaccination {
+	background: url('images/main-sprite.png') no-repeat 0px -397px;
+}
+
+.map-key .key-education {
+	background: url('images/main-sprite.png') no-repeat -582px -397px;
+}
+
+.map-key .key-no-requirements {
+	background: url('images/main-sprite.png') no-repeat -582px -301px;
+}
+
+.map-key hr {
+	color: #e5e5e5;
+	background-color: #e5e5e5;
+	height: 2px;
+	border:0px;
+	margin: 10px 0px;
+}
+
+.support-bill {
+	width:100%;
+	padding: 5%;
+	background-color: #ededed;
+	color: #323232;
+	margin-top: 20px;
+	
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.support-bill h3 {
+	color: #1d4f9a;
+	margin-top: 0px;
+}
+
+.support-bill p {
+	margin-bottom: 0px;
+}
+
+.state-names div {
+	padding-left: 0px;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+/* End U.S. Map */
+
+.map-left{
+	width:25%;
+	position:relative;
+	float:left;
+}
+.map-right {
+    position: relative;
+    width: 75%;
+	float:left;
+}
+
+.key-vaccination:before{
+	width:20px;
+	height:20px;
+	background-color:#1f509c
+}
+
+.state-names .large-4, .state-names .large-3{
+	width:20%;
+	float:left;
+}
+
+.map-container{
+	margin-top:40px;
+	display:block;
+}
