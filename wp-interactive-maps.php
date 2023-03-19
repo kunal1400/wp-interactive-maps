@@ -19,7 +19,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-function wpdocs_enqueue_custom_style() {
+add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_script(
         "wp_interactive_maps_raphael", 
         plugin_dir_url( __FILE__ ) . 'js/raphael-min.js', 
@@ -49,11 +49,9 @@ function wpdocs_enqueue_custom_style() {
         "wp_interactive_maps_css", 
         plugin_dir_url( __FILE__ ) . 'css/interactive-maps.css'
     );
-}
-add_action( 'wp_enqueue_scripts', 'wpdocs_enqueue_custom_style' );
+});
 
-/*state map*/
-function get_state_map( $atts ){	
+add_shortcode( 'vaccination_map', function ( $atts ){	
 	return '<div id="nmamap"></div> 
         <div class="map-container">
             <div class="map-left large-4 small-16 columns">
@@ -148,9 +146,7 @@ function get_state_map( $atts ){
         </div><!-- End .main-content -->
     </div>
     </div></div>';
-}
-add_shortcode( 'vaccination_map', 'get_state_map' );
-
+});
 
 add_action ( 'wp_head', 'hook_inHeader' );
 function hook_inHeader() {
@@ -167,3 +163,24 @@ function hook_inHeader() {
         </div>
     </script>';
 }
+
+add_action( 'admin_menu', function () {
+    add_options_page(
+        __( 'WP Interactive Map Settings', 'textdomain' ),
+        __( 'WP Interactive Map Settings', 'textdomain' ),
+        'manage_options',
+        'wp_interactive_map_settings',
+        'settings_page'
+    );
+});
+
+/**
+ * Settings page display callback.
+ */
+function settings_page() {
+    include_once "partials/ui.php";
+}
+
+add_action('admin_enqueue_scripts', function () {
+    wp_enqueue_script( 'wp-create-jsons-admin-js', WP_PLUGIN_URL . '/wp-interactive-maps/js/admin.js', array( 'jquery' ) );
+});
