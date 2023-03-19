@@ -131,11 +131,14 @@ function appendToTbody(e) {
 	jQuery("#_choosen_fields_response").append(htmlToAppend);
 }
 
-jQuery(document).ready(function() {
-	console.log('this is the admin js')
-})
+// jQuery(document).ready(function() {
+// 	console.log('this is the admin js')
+// })
 
 function formOnSubmit(e) {
+	jQuery(e).find(`button[type="submit"]`).prop('disabled', true);
+	jQuery(e).find(`button[type="submit"]`).text("Saving...");
+
 	var mapPopovers = {}
 	if( jQuery("#_choosen_fields_response>tr").length > 0 ) {
 		jQuery("#_choosen_fields_response>tr").each(function(i, e){
@@ -143,10 +146,30 @@ function formOnSubmit(e) {
 			let stateDescription = jQuery(e).find(`[name="state_description"]`)[0].value;
 			mapPopovers[stateName] = {
 				text: stateDescription,
-				link: ''
+				links: ''
 			}			
 		})
 	}
-	console.log(mapPopovers, "mapPopovers");
+
+	// Sending data over ajax
+	jQuery.ajax({
+		url: ajaxurl,
+		method: "POST",
+		data: {
+			action: 'save_map_data',
+			dataForMap: mapPopovers
+		},
+	})
+	.done(function( r ) {
+		// jQuery(e).find(`button[type="submit"]`).prop('disabled', false);
+		jQuery(e).find(`button[type="submit"]`).text("Save");	
+		window.location.reload();
+	})
+	.fail(function( jqXHR, textStatus ) {
+		jQuery(e).find(`button[type="submit"]`).prop('disabled', false);
+		jQuery(e).find(`button[type="submit"]`).text("Save");
+		window.location.reload();
+	})
+
 	return false;
 }
