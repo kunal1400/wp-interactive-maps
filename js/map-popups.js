@@ -218,5 +218,7 @@ jQuery(document).ready(function(e) {
 	// 		links: ''
 	// 	}
 	// };
-	USMap.init( '#map', mapPopovers );	
+	if( mapPopovers ) {
+		USMap.init( '#map', mapPopovers );	
+	}
 });
